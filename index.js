@@ -2,13 +2,16 @@ const express = require("express")
 const port = 3000
 
 const app = express()
+app.use(express.json)
 
 app.get('/users/:id', (request, response) => {
 
-    const { name, age } = request.query
+    const { id } = request.params
 
 
-    return response.json({name, age})
+    return response.json({id})
+
+    console.log
 })
 
 
